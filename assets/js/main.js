@@ -19,6 +19,37 @@
       return document.querySelector(el)
     }
   }
+/** back to top **/
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Add event listener to scroll to top button
+  var scrollToTopButton = document.getElementById("scrollToTopButton");
+  if (scrollToTopButton) {
+    scrollToTopButton.addEventListener("click", function() {
+      // Scroll to the top of the page smoothly
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  // Add event listener to show/hide scroll to top button based on scroll position
+  window.addEventListener("scroll", function() {
+    var scrollPosition = window.scrollY;
+    var windowHeight = window.innerHeight;
+    var bodyHeight = document.body.offsetHeight;
+    // Adjust visibility based on scroll position
+    if ((bodyHeight - scrollPosition) < windowHeight * 1.5) {
+      scrollToTopButton.style.display = 'block';
+    } else {
+      scrollToTopButton.style.display = 'none';
+    }
+  });
+});
+
+
+/** back to top **/
 
   /**
    * Hero type effect

@@ -1,0 +1,365 @@
+/* AZIZ STARTS HERE */
+
+body {
+    background-color: #f5f5f5;
+  }
+  
+  .power-text {
+    color: #e43c5c; /* Your desired color for "Power" */
+  }
+  
+  .journey-text {
+    color: #e43c5c; /* Your desired color for "Journey" */
+  }
+  
+  
+  .btn-group {
+    display: flex; /* Display the links in a flex container */
+  }
+  
+  .btn-get-started {
+    margin-right: 20px; /* Add some spacing between the links (adjust as needed) */
+  }
+  
+  .animated-icon {
+    animation: motorcycleAnimation 2s linear infinite; /* You can adjust the animation duration and type */
+  }
+  
+  @keyframes motorcycleAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px); /* Adjust the distance the icon moves */
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animated-icon {
+    animation: spin 2s linear infinite; /* Adjust the animation duration and type */
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  .contact-item {
+    margin-bottom: 20px; /* Adjust the margin to control the vertical spacing between sections */
+  }
+  
+  /* socails */
+  
+  .wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #f5f5f5;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #f5f5f5;
+    color: #f5f5f5;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #f5f5f5;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #f5f5f5;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #f5f5f5;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #f5f5f5;
+  }
+  /* socails */
+  
+  /* typing box */
+  .group {
+    position: relative;
+   }
+   
+   .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px; /* Adjust the default width as needed */
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+   }
+   
+   .input:focus {
+    outline: none;
+   }
+   
+   label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+   
+   .input:focus ~ label, .input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+   }
+   
+   .bar {
+    position: relative;
+    display: block;
+    width: 200px; /* Adjust the default width as needed */
+   }
+   
+   .bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+   }
+   
+   .bar:before {
+    left: 50%;
+   }
+   
+   .bar:after {
+    right: 50%;
+   }
+   
+   .input:focus ~ .bar:before, .input:focus ~ .bar:after {
+    width: 50%;
+   }
+   
+   .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+   }
+   
+   .input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+   }
+   
+   @keyframes inputHighlighter {
+    from {
+     background: #5264AE;
+    }
+   
+    to {
+     width: 0;
+     background: transparent;
+    }
+   }
+   
+   /* Adjust the width of the "Subject" input field */
+   #subject.input {
+     width: 20%; /* Adjust the width as needed */
+     margin-bottom: 80px; /* Add margin bottom to create space between input fields */
+   }
+   
+   /* Adjust the width of the "Your Name" input field */
+   #name.input {
+     width: 70%; /* Adjust the width as needed */
+   }
+   
+   /* Adjust the width of the "Your Email" input field */
+   #email.input {
+     width: 60%; /* Adjust the width as needed */
+     margin-bottom: 10px; /* Add margin bottom to create space between input fields */
+   }
+   
+   /* Adjust the width of the "Message" textarea field */
+   #message.input {
+     width: 60%; /* Adjust the width as needed */
+   }
+   
+  /* typing box */
+  
+  /* back to top */
+  .button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .button svg {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .button svg path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: white;
+    align-items: center; /* Center text vertically */
+  }
+  
+  .button:hover svg {
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+  .button::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "Back to Top";
+    color: white;
+    font-size: 0px;
+    transition-duration: 0.3s;
+    text-align: center; /* Center text horizontally */
+  }
+  
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    color: black; /* Change text color to black on hover */
+  }
+  
+  
+  /* back to top */
+  
+  
+  
+  /* titles */
+  .custom-hover-button {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 25px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.custom-hover-button::before {
+  margin-left: auto;
+}
+
+.custom-hover-button::after, .custom-hover-button::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #ea6981;
+  display: block;
+  transition: 0.5s;
+}
+
+.custom-hover-button:hover::after, .custom-hover-button:hover::before {
+  width: 100%;
+}
+/* titles */
+
+
+
+
+
+
+
+/* AZIZ ENDS HERE */
